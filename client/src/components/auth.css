@@ -128,11 +128,11 @@ button:hover {
     .container {
       flex-direction: column;
       justify-content: center;
-      width: 100vw;
-      height: 100vw;
     }
     .left {
-        margin: 0 auto 0 auto;
+	max-width: 100%;
+	aspect-ratio: 100/75;
+        margin: 0 4vw 0 4vw;
     }
     .form-container {
         margin: 0 auto 0 auto;
