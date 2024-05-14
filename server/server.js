@@ -100,7 +100,7 @@ app.use(fileUpload());
 
 app.post("/logout", (req, res) => {
   res.clearCookie("token");
-  res.status(200).send("Logged out successfully!"); 
+  res.end();
 });
 
 app.post('/upload', async (req, res) => {
