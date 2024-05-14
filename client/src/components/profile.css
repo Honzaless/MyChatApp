@@ -1,0 +1,138 @@
+body, html, * {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+#root {
+    background-color: rgb(246, 246, 246);
+}
+
+.profile-background {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(8,53,78,0.700717787114846) 0%, rgba(31,135,223,0.6474964985994398) 1%, rgba(44,135,190,0) 50%);
+    height: auto;
+    outline: solid rgb(240, 240, 240) 2px;
+}
+
+.bottom-background {
+    background-color: rgb(246, 246, 246);
+}
+
+.information-container {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+}
+
+.about-container {
+    background-color: white;
+    margin: 15px 0 15px 0;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+h2 {
+    font-size: 24px;
+    padding: 0;
+    margin: 0px;
+}
+
+h3 {
+    font-size: 20px;
+    padding: 25px 0 15px 0;
+    margin: 0px;
+    cursor: default;
+    color:rgb(100, 100, 100);
+}
+
+.icon {
+    opacity: 0.5;
+    width: 30px;
+    height: 30px;
+    margin: auto 15px auto 0;
+}
+
+.about-information {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-information > p {
+    font-weight: 500;
+    color: rgb(120, 120, 120);
+    margin: auto 0 auto 0;
+}
+
+.photos-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.photos-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.show-all-pictures {
+    margin-left: auto;
+    color: rgb(75, 147, 214);
+    font-weight: 500;
+    padding: 0 4px 0 4px;
+}
+
+.profile-information {
+    width: 900px;
+    margin: 0 auto 0 auto;
+}
+
+.profile-picture {
+    outline: solid 4px white;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.t:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.profile-main {
+    display: flex;
+    flex-direction: row;
+    padding: 180px 0 20px 0;
+}
+
+.profile-name {
+    margin: 100px 0 0 20px;
+}
+
+.about-header {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 15px 0;
+    justify-content: space-between;
+}
+
+.edit-profile {
+    font-size: 18px;
+    color: rgb(75, 147, 214);
+    font-weight: 500;
+    padding: 0 4px 0 4px;
+}
+
+.about-input {
+    background-color: rgb(246, 246, 246);
+    margin: auto 0 auto 0;
+}
+
+.about-submit {
+    margin: auto 10px auto auto;
+    color: rgb(75, 147, 214);
+    font-weight: 500;
+}

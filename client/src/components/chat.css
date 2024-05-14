@@ -1,0 +1,360 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+html, body, #root, .main-container {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+}
+
+#root {
+    position: relative;
+    z-index: 0;
+}
+
+.user-div {
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+    left: 0;
+    bottom: 0;
+    margin: auto auto 8px auto;
+    cursor: pointer;
+}
+
+.user-div img {
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+}
+
+.user-div:hover {
+    background-color: rgb(210, 210, 255);
+    opacity: 0.5;
+}
+
+.user-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border-radius: 8px;
+    height: fit-content;
+    width: 300px;
+    box-shadow: 0px 0px 8px rgb(226, 226, 226);
+    margin-left: 8px;
+    left: 0;
+    bottom: 70px;
+}
+
+.user-menu-member {
+    padding: 8px 15px 8px 15px;
+    cursor: pointer;
+    margin: 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
+}
+
+.user-menu-member img {
+    height: 21px;
+    width: 21px;
+    margin-right: 15px;
+}
+
+.user-menu-member:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+#root > div:first-of-type {
+    height: 100%;
+    width: 100%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-part {
+    outline: solid rgb(238, 238, 238) 1px;
+    height: 100%;
+}
+
+.not-selected-chat-box {
+    width: 100%;
+}
+
+.box-header {
+    min-height: 50px;
+    overflow: hidden;
+    max-height: 50px;
+}
+
+.box-header > * {
+    margin: 8px;
+}
+
+.user-box {
+    display: flex;
+    flex-direction: column;
+    min-width: 80px;
+}
+
+.chats-box {
+    min-width: 360px;
+    max-width: 360px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.chats-box > .box-header > p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.chats-box > .box-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-bar {
+    background-color: rgb(238, 238, 238);
+    border-radius: 15px;
+}
+
+.search-results {
+    background-color: white;
+    width: 200px;
+    position: absolute;
+    top: 40px;
+    left: 160px;
+    z-index: 1;
+    border-radius: 10px;
+    border: solid 1px rgb(238, 238, 238);
+    padding: 8px;
+}
+
+.chats {
+    margin: 0px 6px 0px 6px;
+    border-radius: 8px;
+    height: 65px;
+    box-sizing: border-box;
+}
+
+.selected-chat-box {
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.selected-chat-box > .box-header {
+    border-bottom: solid rgb(238, 238, 238) 1px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 3px 0 3px 3px;
+}
+
+.selected-chat-box > * {
+    padding: 8px;
+}
+
+.texts {
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+.text-send {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 8px;
+}
+
+.file-input {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    padding-right: 8px;
+}
+
+.text-input {
+    border-radius: 50px;
+    width: 100%;
+    height: 30px;
+    padding: 0 8px 0 8px;
+    background-color: rgb(231, 231, 231);
+}
+
+.text-send > * {
+    height: 30px;
+    margin: auto;
+}
+
+.send-button > img:first-of-type {
+    height: inherit;
+}
+
+.send-button {
+    margin: auto 10px auto 0;
+}
+
+.chat-box {
+    height: 100%;
+}
+
+.chat-box * {
+    max-width: 100%;
+    height: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.chat-box *:hover {
+    cursor: pointer;
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+}
+
+.selected-background {
+    background-color: rgb(238, 238, 238);
+    border-radius: 8px;
+}
+
+.sent-message {
+    background-color: rgb(47, 130, 238);
+    color: white;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+.received-message {
+    background-color: rgb(238, 238, 238);
+    margin-right: auto;
+    margin-left: 8px;
+}
+
+.message {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    border-radius: 18px;
+    padding: 8px;
+}
+
+.file-label {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    padding-right: 8px;
+  }
+
+.file-label > img {
+    height: inherit;
+    width: inherit;
+}
+
+#actual-btn {
+    display: none;
+}
+
+#profile-input {
+    display: none;
+}
+
+.conversation-div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.conversation-div img {
+    padding: 0;
+}
+
+
+
+.online-indicator {
+    background-color: rgb(40, 209, 40);
+}
+
+.offline-indicator {
+    background-color: rgb(145, 145, 145);
+}
+
+.chat-box > .conversation-div > .online-indicator:hover {
+    background-color: rgb(40, 209, 40);
+    border-radius: 100%;
+}
+
+.chat-box > .conversation-div > .offline-indicator:hover {
+    background-color: rgb(145, 145, 145);
+    border-radius: 100%;
+}
+
+.person-descriptor {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.chat-box > .conversation-div > .online-indicator, .offline-indicator {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border-radius: 100%;
+    position: absolute;
+    left: 13%;
+    top: 56%;
+    border: solid white 2px;
+}
+
+.profile-pic {
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.chat-box > .conversation-div > .profile-pic:hover {
+    border-radius: 100%;
+}
+
+.selected-person-pic {
+    box-sizing: border-box;
+    border-radius: 100%;
+    height: auto;
+    width: 43px;
+    margin-right: 8px;
+}
+
+.inner-header {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 0 0;
+    border-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-decoration: none;
+}
+
+.inner-header:hover {
+    background-color: rgb(238, 238, 238);
+}
