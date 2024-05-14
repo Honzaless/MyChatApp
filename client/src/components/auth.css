@@ -129,6 +129,10 @@ button:hover {
       flex-direction: column;
       justify-content: center;
     }
+    #logo {
+	max-width: 666px;
+	margin: 0 auto 0 auto;
+    }
     .left {
 	max-width: 100%;
 	aspect-ratio: 100/75;
