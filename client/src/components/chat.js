@@ -17,23 +17,40 @@ const Chat = () => {
     const [imagesUrl, setImagesUrl] = useState({});
     const [search, setSearch] = useState("");
     const [matchedPeople, setMatchedPeople] = useState([]);
+    const [searchVisibility, setSearchVisibility] = useState(false);
     const bottomRef = useRef(null);
     const divRef = useRef();
     const otherDivRef = useRef();
+    const searchDivRef = useRef();
+    const otherSearchDivRef = useRef();
 
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (divRef.current && !divRef.current.contains(event.target)
-            && otherDivRef.current && !otherDivRef.current.contains(event.target)) {
-        setSeeMenu(false);
-      }
+    useEffect(() => {
+        function handleClickOutside(event) {
+        if (divRef.current && !divRef.current.contains(event.target)
+                && otherDivRef.current && !otherDivRef.current.contains(event.target)) {
+            setSeeMenu(false);
+        }
     }
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [divRef]);
+        return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [divRef]);
+
+    useEffect(() => {
+        function handleClickOutsideSearch(event) {
+        if (searchDivRef.current && !searchDivRef.current.contains(event.target)
+                && otherSearchDivRef.current && !otherSearchDivRef.current.contains(event.target)) {
+            setSearchVisibility(false);
+        }
+    }
+
+    document.addEventListener('mousedown', handleClickOutsideSearch);
+        return () => {
+        document.removeEventListener('mousedown', handleClickOutsideSearch);
+        };
+    }, [searchDivRef]);
 
     useEffect(() => {
         const ws = new WebSocket("ws://localhost:5000");
@@ -156,20 +173,19 @@ const Chat = () => {
         function searchFunction () {
             let foundPeople = [];
     
-            Object.values(allPeople).forEach(sentence => {
-                let words = sentence.split(" ")
-                words.forEach((word,index) => {
-                if(word.match(new RegExp(`^${search}\\w`, "i"))) {
-                    foundPeople.push(sentence);
+            Object.values(allPeople).forEach(name => {
+                if(name.match(new RegExp(`^${search}\\w`, "i"))) {
+                    foundPeople.push(name);
                     setMatchedPeople(foundPeople);
                 }
-                })
             });
-            console.log(matchedPeople);
-            console.log(search);
         }
         searchFunction()
     }, [search, allPeople]);
+
+    function fiddleWithSearch () {
+        setSearchVisibility(true);
+    };
 
     const currentUrl = useParams().id;
 
@@ -209,8 +225,10 @@ const Chat = () => {
             <div className="chats-box main-part">
                 <div className="box-header">
                     <p>Chats</p>
-                    <input className="search-bar" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="search..."></input>
-                    <div className="search-results">{matchedPeople.map(username => (<div>{username}</div>))}</div>
+                    <input className="search-bar" ref={searchDivRef} value={search} onClick={fiddleWithSearch} onChange={(event) => setSearch(event.target.value)} placeholder="search..."></input>
+                    {searchVisibility ?
+                    <div className="search-results" ref={otherSearchDivRef}>{matchedPeople.map(username => (<div key={username} onClick={() => setConversation(Object.keys(allPeople).find(id => allPeople[id] === username))} className="search-member">{username}</div>))}</div> :
+                    <div></div>}
                 </div>
                 <div className="chats">
                     <div className="chat-box">{Object.keys(peopleWithoutUser).map(userId => (

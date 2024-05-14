@@ -13,14 +13,16 @@ body, html, * {
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(8,53,78,0.700717787114846) 0%, rgba(31,135,223,0.6474964985994398) 1%, rgba(44,135,190,0) 50%);
     height: auto;
     outline: solid rgb(240, 240, 240) 2px;
+    padding: 0 4vw 0 4vw;
 }
 
 .bottom-background {
     background-color: rgb(246, 246, 246);
+    padding: 0 4vw 0 4vw;
 }
 
 .information-container {
-    width: 900px;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     margin: 0 auto 0 auto;
@@ -86,7 +88,7 @@ h3 {
 }
 
 .profile-information {
-    width: 900px;
+    max-width: 900px;
     margin: 0 auto 0 auto;
 }
 

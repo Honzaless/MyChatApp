@@ -138,7 +138,6 @@ html, body, #root, .main-container {
     z-index: 1;
     border-radius: 10px;
     border: solid 1px rgb(238, 238, 238);
-    padding: 8px;
 }
 
 .chats {
@@ -358,3 +357,21 @@ html, body, #root, .main-container {
 .inner-header:hover {
     background-color: rgb(238, 238, 238);
 }
+
+.search-member {
+    padding: 8px;
+    cursor: pointer;
+    margin: 2px 0 0 0 ;
+}
+
+.search-member:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+@media only screen and (max-width: 760px) {
+    .chats-box {
+        min-width: 100px;
+        max-width: 100px;
+        overflow-x: auto;
+    }
+  }

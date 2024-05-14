@@ -32,20 +32,22 @@ const Login = () => {
     return (
         <div className="container">
             <div className="left">
-                <img id="logo" alt="logo" src="https://img.freepik.com/premium-vector/fast-message-icon-logo-design-template_412311-3778.jpg?w=2000"></img>
+                <img id="logo" alt="logo" src="https://api.logo.com/api/v2/images?logo=logo_5db9ebed-67b6-4e88-ab54-0ce6340abb39&u=1715682275675&format=svg&margins=166&width=1000&height=750&fit=contain"></img>
             </div>
             <div className="form-container">
                 <form className="authForm" onSubmit={handleSubmit}>
-                    <input
-                    value={username}
-                    onChange={event => setUsername(event.target.value)}
-                    type="text"
-                    placeholder="username"/>
-                    <input
-                    value={password}
-                    onChange={event => setPassword(event.target.value)}
-                    type="password"
-                    placeholder="password"/>
+                    <div className="login-input-container">
+                        <input
+                        value={username}
+                        onChange={event => setUsername(event.target.value)}
+                        type="text"
+                        placeholder="username"/>
+                        <input
+                        value={password}
+                        onChange={event => setPassword(event.target.value)}
+                        type="password"
+                        placeholder="password"/>
+                    </div>
                     <button className="submit-button">Login</button>
                     <div>
                         <div>

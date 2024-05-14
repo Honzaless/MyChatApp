@@ -4,51 +4,46 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+.left {
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto 0 auto 0;
+}
+
 #logo {
     mix-blend-mode: multiply;
-    width: 500px;
-    height: 500px;
-    position: fixed;
-    top: 5%;
-    left: 5%;
+    max-width: inherit;
+    max-height: inherit;
 }
 
 .container {
-    background: linear-gradient(268deg, #aa80ff, #7000e0, #ebd6ff);
-    background-size: 600% 600%;
-
-    -webkit-animation: magic 16s ease infinite;
-    -moz-animation: magic 16s ease infinite;
-    animation: magic 16s ease infinite;
-    height: 100vw;
-    width: 100vw;
-}
-
-@-webkit-keyframes magic {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes magic {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes magic {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    background: linear-gradient(268deg, #c8dcfa, #c1daf7, #b7d5f1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .form-container {
-    background-color: white;
+    background-color: rgb(236, 236, 236);
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    position: absolute;
-    margin-left: 50%;
-    margin-right: 10%;
-    top: 25%;
+    height: fit-content;
+    width: fit-content;
+    margin: auto 4vw auto 0;
+}
+
+.login-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-input-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
 }
 
 input {
@@ -72,16 +67,6 @@ h3 {
     font-size: 22px;
 }
 
-h3:hover {
-    cursor: pointer;
-}
-
-.question-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 button, input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
@@ -101,30 +86,10 @@ button, input[type="submit"], input[type="reset"] {
     border-radius: 8px;
     border: none;
     color: white;
+    font-weight: 500    ;
     font-size: 18px;
     transition: 0.4s;
-    background: linear-gradient(162deg, #a85fec, #7000e0);
-    background-size: 400% 400%;
-
-    -webkit-animation: buttonmagic 11s ease infinite;
-    -moz-animation: buttonmagic 11s ease infinite;
-    animation: buttonmagic 11s ease infinite;
-}
-
-@-webkit-keyframes buttonmagic {
-    0%{background-position:0% 59%}
-    50%{background-position:100% 42%}
-    100%{background-position:0% 59%}
-}
-@-moz-keyframes buttonmagic {
-    0%{background-position:0% 59%}
-    50%{background-position:100% 42%}
-    100%{background-position:0% 59%}
-}
-@keyframes buttonmagic {
-    0%{background-position:0% 59%}
-    50%{background-position:100% 42%}
-    100%{background-position:0% 59%}
+    background: linear-gradient(162deg, #5fa1ec, #0061e0);
 }
 
 button:hover {
@@ -151,3 +116,26 @@ button:hover {
     color: black;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 1250px) {
+    .register-input-container {
+        display: flex;
+        flex-direction: column;
+    }
+  }
+
+@media only screen and (max-width: 896px) {
+    .container {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .left {
+        margin: 0 auto 0 auto;
+    }
+    .form-container {
+        margin: 0 auto 0 auto;
+    }
+    .register-input-container {
+        flex-direction: column;
+    }
+  }
