@@ -130,7 +130,7 @@ button:hover {
       justify-content: center;
     }
     #logo {
-	max-width: 666px;
+	aspect-ratio: 100/75;
 	margin: 0 auto 0 auto;
     }
     .left {
