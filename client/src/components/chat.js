@@ -213,10 +213,10 @@ const Chat = () => {
                         <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="profile-icon"></img>
                         <p>Show Profile</p>
                     </Link>
-                    <Link to={"../"} className="user-menu-member" onClick={() => clearCookies()}>
+                    <div className="user-menu-member" onClick={() => clearCookies()}>
                         <img src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png" alt="logout-icon"></img>
                         <p>Log Out!</p>
-                    </Link>
+                    </div>
                 </div>
                 :
                 <div></div>
