@@ -26,7 +26,7 @@ app.use(bodyParser.json({ limit: '16mb' }));
 const port = process.env.PORT;
 app.use(cors({
   credentials: true,
-  origin: true,
+  origin: process.env.CLIENT_URL,
 }));
 app.use(cookieParser());
 app.use(express.json());
