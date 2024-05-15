@@ -26,7 +26,7 @@ app.use(bodyParser.json({ limit: '16mb' }));
 const port = process.env.PORT;
 app.use(cors({
   credentials: true,
-  origin: '*',
+  origin: /mychatapp-frontend.onrender\.com$/,
 }));
 app.use(cookieParser());
 app.use(express.json());
