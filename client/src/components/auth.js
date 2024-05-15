@@ -11,6 +11,13 @@ const Login = () => {
     const [redirect, setRedirect] = useState(false);
     const {setUsername: setLoggedUsername, setId, id} = useContext(UserContext);
     const [redirectPath, setRedirectPath] = useState("");
+    const [show, setShow] = useState(false);
+
+    useEffect(()=>{
+      setTimeout(()=>{
+        setShow(true)
+      }, 2000)
+    }, []);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -57,6 +64,7 @@ const Login = () => {
                     </div>
                 </form>
             </div>
+                {show ? <div classname="popup"></div> : <div></div>}
         </div>
     )
 }
