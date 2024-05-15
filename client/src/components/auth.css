@@ -121,10 +121,11 @@ button:hover {
     background-color: rgb(236, 236, 236);
     background-radius: 10px;
     width: 360px;
-    height: 80px;
+    height: 0%;
     position: absolute;
     bottom: 80px;
     left: 50%;
+    padding: 10px;
 }
 
 @media only screen and (max-width: 1250px) {
