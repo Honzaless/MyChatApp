@@ -120,7 +120,7 @@ button:hover {
 .popup {
     background-color: rgb(236, 236, 236);
     background-radius: 10px;
-    width: 300px;
+    width: 360px;
     height: 80px;
     position: absolute;
     bottom: 80px;
