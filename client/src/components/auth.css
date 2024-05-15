@@ -118,13 +118,13 @@ button:hover {
 }
 
 .popup {
-	background-color: rgb(236, 236, 236);
-	background-radius: 10px;
-	height: 20px;
-	width: 300px;
-	position: absolute;
-	bottom: 0%;
-	left: 50%;
+    background-color: rgb(236, 236, 236);
+    background-radius: 10px;
+    height: 20px;
+    width: 300px;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
 }
 
 @media only screen and (max-width: 1250px) {
