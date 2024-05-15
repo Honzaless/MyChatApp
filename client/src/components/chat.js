@@ -161,7 +161,6 @@ const Chat = () => {
     async function clearCookies () {
         try {
             await axios.post("logout");
-            return <Navigate to="https://mychatapp-frontend.onrender.com"></Navigate>
             console.log("Successfully logged out!");
         }
         catch (err) {
@@ -213,10 +212,10 @@ const Chat = () => {
                         <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="profile-icon"></img>
                         <p>Show Profile</p>
                     </Link>
-                    <div className="user-menu-member" onClick={() => clearCookies()}>
+                    <Link to={"../"} className="user-menu-member" onClick={() => clearCookies()}>
                         <img src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png" alt="logout-icon"></img>
                         <p>Log Out!</p>
-                    </div>
+                    </Link>
                 </div>
                 :
                 <div></div>
