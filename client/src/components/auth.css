@@ -123,7 +123,7 @@ button:hover {
     width: 360px;
     position: absolute;
     bottom: 0%;
-    left: 50%;
+    margin: 0 auto 0 auto;
     padding: 10px;
 }
 
