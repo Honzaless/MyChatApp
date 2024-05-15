@@ -99,7 +99,7 @@ app.post("/select", async (req, res) => {
 app.use(fileUpload());
 
 app.post("/logout", (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token", {path: "/");
   res.end();
 });
 
