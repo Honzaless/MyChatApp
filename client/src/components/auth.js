@@ -13,12 +13,6 @@ const Login = () => {
     const [redirectPath, setRedirectPath] = useState("");
     const [show, setShow] = useState(false);
 
-    function Example() {
-      useEffect(() => {
-        document.title = 'Chat Away';
-      }, []);
-    }
-
     useEffect(()=>{
       setTimeout(()=>{
         setShow(true)
