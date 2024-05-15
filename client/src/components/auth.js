@@ -64,7 +64,7 @@ const Login = () => {
                     </div>
                 </form>
             </div>
-                {show ? <div className="popup">"There is a little problem with CORS after deployment, because of different domain backend server, I'll fix it soon..."</div> : <div></div>}
+                {show ? <div className="popup">"There is a little problem with CORS after deployment, because of backend (node) server being on a different subdomain, hopefully I'll fix it by 17th of May, after my exam..."</div> : <div></div>}
         </div>
     )
 }
