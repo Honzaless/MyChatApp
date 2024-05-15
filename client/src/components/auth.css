@@ -136,22 +136,27 @@ button:hover {
 
 @media only screen and (max-width: 896px) {
     .container {
-      flex-direction: column;
-      justify-content: center;
-    }
-    #logo {
-	aspect-ratio: 100/75;
-	margin: 0 auto 0 auto;
+      	flex-direction: column;
+      	justify-content: center;
     }
     .left {
-	max-width: 100%;
-	aspect-ratio: 100/75;
-        margin: 0 4vw 0 4vw;
+	margin: 0 auto 0;
     }
     .form-container {
         margin: 0 auto 0 auto;
     }
     .register-input-container {
         flex-direction: column;
+    }
+  }
+
+@media only screen and (max-width: 500px) {
+    #logo {
+        aspect-ratio: 100/75;
+    }
+    .left {
+        max-width: 100%;
+        aspect-ratio: 100/75;
+        margin: 0 4vw 0 4vw;
     }
   }
