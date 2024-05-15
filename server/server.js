@@ -26,7 +26,7 @@ app.use(bodyParser.json({ limit: '16mb' }));
 const port = process.env.PORT;
 app.use(cors({
   credentials: true,
-  origin: process.env.CLIENT_URL,
+  origin: true,
 }));
 app.use(cookieParser());
 app.use(express.json());
@@ -71,7 +71,7 @@ app.post("/register", async (req, res) => {
     const createdUser = await User.create({username, password: hashedPassword, email});
     jwt.sign({userId: createdUser._id, username}, jwtSecretKey, {}, (err, token) => {
       if (err) throw err;
-      res.cookie("token", token, {sameSite: "none", secure: "true", maxAge: 36000000, domain: ".mychatapp-frontend.onrender.com"}).status(201).json({
+      res.cookie("token", token, {sameSite: "none", secure: true, maxAge: 36000000, domain: ".mychatapp-frontend.onrender.com"}).status(201).json({
         id: createdUser._id,
       });
   });
