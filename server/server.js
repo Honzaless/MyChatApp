@@ -55,7 +55,7 @@ app.post("/login", async (req, res) => {
     const isPass = bcrypt.compareSync(password, foundUser.password);
     if (isPass) {
       jwt.sign({userId: foundUser._id, username}, jwtSecretKey, {}, (err, token) => {
-        res.cookie("token", token, {sameSite: "none", secure: true, maxAge: 36000000}).json({
+        res.cookie("token", token, {sameSite: "none", secure: true, maxAge: 36000000, domain: ".mychatapp-frontend.onrender.com"}).json({
           id: foundUser._id,
         })
       });
@@ -71,7 +71,7 @@ app.post("/register", async (req, res) => {
     const createdUser = await User.create({username, password: hashedPassword, email});
     jwt.sign({userId: createdUser._id, username}, jwtSecretKey, {}, (err, token) => {
       if (err) throw err;
-      res.cookie("token", token, {sameSite: "none", secure: "true", maxAge: 36000000}).status(201).json({
+      res.cookie("token", token, {sameSite: "none", secure: "true", maxAge: 36000000, domain: ".mychatapp-frontend.onrender.com"}).status(201).json({
         id: createdUser._id,
       });
   });
@@ -99,7 +99,7 @@ app.post("/select", async (req, res) => {
 app.use(fileUpload());
 
 app.post("/logout", (req, res) => {
-  res.clearCookie("token", {sameSite: "none", secure: true});
+  res.clearCookie("token", {sameSite: "none", secure: true, domain: ".mychatapp-frontend.onrender.com"});
   res.end();
 });
 
