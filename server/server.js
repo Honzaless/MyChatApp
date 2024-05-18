@@ -99,7 +99,7 @@ app.post("/select", async (req, res) => {
 app.use(fileUpload());
 
 app.post("/logout", (req, res) => {
-  res.clearCookie("token", {sameSite: "none", secure: true, , domain: ".mychatapp-frontend.onrender.com", path: "/"});
+  res.clearCookie("token", {sameSite: "none", secure: true, domain: ".mychatapp-frontend.onrender.com", path: "/"});
   res.end();
 });
 
