@@ -55,7 +55,7 @@ app.post("/login", async (req, res) => {
     const isPass = bcrypt.compareSync(password, foundUser.password);
     if (isPass) {
       jwt.sign({userId: foundUser._id, username}, jwtSecretKey, {}, (err, token) => {
-        res.cookie("token", token, {sameSite: "none", secure: true, maxAge: 36000000, domain: "mychatapp-frontend.onrender.com", path: "/", httpOnly: true}).json({
+        res.cookie("token", token, {sameSite: "none", secure: true, maxAge: 36000000, path: "/", httpOnly: true}).json({
           id: foundUser._id,
         })
       });
