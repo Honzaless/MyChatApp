@@ -81,7 +81,7 @@ app.post("/register", async (req, res) => {
     const createdUser = await User.create({username, password: hashedPassword, email});
     jwt.sign({userId: createdUser._id, username}, jwtSecretKey, {}, (err, token) => {
       if (err) throw err;
-      res.cookie("token", token, {sameSite: "none", secure: true, maxAge: 36000000, domain: "mychatapp-frontend.onrender.com", path: "/", httpOnly: true}).status(201).json({
+      res.cookie("token", token, {sameSite: "none", secure: true, maxAge: 36000000, path: "/", httpOnly: true}).status(201).json({
         id: createdUser._id,
       });
   });
@@ -109,7 +109,7 @@ app.post("/select", async (req, res) => {
 app.use(fileUpload());
 
 app.post("/logout", (req, res) => {
-  res.clearCookie("token", {sameSite: "none", secure: true, domain: "mychatapp-frontend.onrender.com", path: "/", httpOnly: true});
+  res.clearCookie("token", {sameSite: "none", secure: true, path: "/", httpOnly: true});
   res.end();
 });
 
