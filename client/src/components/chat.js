@@ -161,6 +161,7 @@ const Chat = () => {
     async function clearCookies () {
         try {
             await axios.post("logout");
+            window.location.reload();
             console.log("Successfully logged out!");
         }
         catch (err) {
