@@ -12,15 +12,18 @@ const Register = () => {
     const [redirect, setRedirect] = useState(false);
     const {setUsername: setLoggedUsername, setId, id} = useContext(UserContext);
     const [redirectPath, setRedirectPath] = useState("");
+    const [loading, setLoading] = useState(false);
 
     async function handleSubmit(event) {
         if (password === confirmpass) {
             event.preventDefault();
+            setLoading(true)
             const {data} = await axios.post("register", {username, password, email});
             setRedirect(true);
             setLoggedUsername(username);
             setId(data.id);
             setRedirectPath(data.id);
+            setLoading(false);
         }
         else {
             event.preventDefault();
@@ -73,6 +76,7 @@ const Register = () => {
                     </div>
                 </form>
             </div>
+            {loading ? <div className="loader-container"><div className="spinner"></div></div> : <div className="no-display"></div>}
         </div>
     )
 }
