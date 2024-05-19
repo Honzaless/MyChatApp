@@ -11,6 +11,7 @@ const Login = () => {
     const [redirect, setRedirect] = useState(false);
     const {setUsername: setLoggedUsername, setId, id} = useContext(UserContext);
     const [redirectPath, setRedirectPath] = useState("");
+    const [loading, setLoading] = useState(false);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -19,6 +20,7 @@ const Login = () => {
         setLoggedUsername(username);
         setId(data.id);
         setRedirectPath(data.id);
+        setLoading(true);
     }
 
     if (id) {
@@ -57,6 +59,7 @@ const Login = () => {
                     </div>
                 </form>
             </div>
+            {loading ? <div className="loader-container"></div> : <div style="display:none"></div>}
         </div>
     )
 }
