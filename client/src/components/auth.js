@@ -12,6 +12,7 @@ const Login = () => {
     const {setUsername: setLoggedUsername, setId, id} = useContext(UserContext);
     const [redirectPath, setRedirectPath] = useState("");
     const [loading, setLoading] = useState(false);
+    const [somethingWrong, setSomethingWrong] = useState(false);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -24,6 +25,7 @@ const Login = () => {
             setRedirectPath(data.id);
         }
         setLoading(false);
+        setSomethingWrong(true);
     }
 
     if (id) {
@@ -52,6 +54,7 @@ const Login = () => {
                         onChange={event => setPassword(event.target.value)}
                         type="password"
                         placeholder="password"/>
+                        {somethingWrong ? <i className="something-wrong">username or password is incorrect!</i> : <div className="no-display"></div>}
                     </div>
                     <button className="submit-button">Login</button>
                     <div>
