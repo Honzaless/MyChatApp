@@ -59,7 +59,7 @@ const Login = () => {
                     </div>
                 </form>
             </div>
-            
+            {loading ? <div className="loader-container"><div className="spinner"></div></div> : <div style="display:none"></div>}
         </div>
     )
 }
