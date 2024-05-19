@@ -117,16 +117,6 @@ button:hover {
     text-decoration: none;
 }
 
-.popup {
-    background-color: rgb(236, 236, 236);
-    background-radius: 10px;
-    width: 360px;
-    position: absolute;
-    bottom: 0%;
-    margin: 0 auto 0 auto;
-    padding: 10px;
-}
-
 @media only screen and (max-width: 1250px) {
     .register-input-container {
         display: flex;
