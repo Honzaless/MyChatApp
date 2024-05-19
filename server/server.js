@@ -70,7 +70,9 @@ app.post("/login", async (req, res) => {
         })
       });
     }
+    else {res.json(false)}
   }
+  else {res.json(false)}
 });
 
 app.post("/register", async (req, res) => {
