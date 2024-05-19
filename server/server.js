@@ -25,7 +25,7 @@ app.use(bodyParser.json({ limit: '16mb' }));
 
 const port = process.env.PORT;
 
-const allowedOriginRegex = /^https:\/\/mychatapp-frontend\.com/;
+const allowedOriginRegex = /^https:\/\/mychatapp-frontend.onrender.com/;
 
 app.use(cors({
   origin: (origin, callback) => {
