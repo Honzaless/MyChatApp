@@ -11,13 +11,6 @@ const Login = () => {
     const [redirect, setRedirect] = useState(false);
     const {setUsername: setLoggedUsername, setId, id} = useContext(UserContext);
     const [redirectPath, setRedirectPath] = useState("");
-    const [show, setShow] = useState(false);
-
-    useEffect(()=>{
-      setTimeout(()=>{
-        setShow(true)
-      }, 2000)
-    }, []);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -64,7 +57,6 @@ const Login = () => {
                     </div>
                 </form>
             </div>
-                {show ? <div className="popup">"There is a little problem with CORS after deployment, because of backend (node) server being on a different subdomain, hopefully I'll fix it by 17th of May, after my exam..."</div> : <div></div>}
         </div>
     )
 }
