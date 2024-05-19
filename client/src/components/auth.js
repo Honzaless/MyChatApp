@@ -15,12 +15,15 @@ const Login = () => {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        const {data} = await axios.post("login", {username, password});
-        setRedirect(true);
-        setLoggedUsername(username);
-        setId(data.id);
-        setRedirectPath(data.id);
         setLoading(true);
+        const {data} = await axios.post("login", {username, password});
+        if (data.id) {
+            setRedirect(true);
+            setLoggedUsername(username);
+            setId(data.id);
+            setRedirectPath(data.id);
+        }
+        setLoading(false);
     }
 
     if (id) {
