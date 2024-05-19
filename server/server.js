@@ -24,10 +24,20 @@ const app = express();
 app.use(bodyParser.json({ limit: '16mb' }));
 
 const port = process.env.PORT;
+
+const allowedOriginRegex = /^https:\/\/mychatapp-frontend\.com/;
+
 app.use(cors({
+  origin: (origin, callback) => {
+    if (allowedOriginRegex.test(origin)) {
+      callback(null, origin);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
-  origin: "*",
 }));
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(require("./routes/record"));
