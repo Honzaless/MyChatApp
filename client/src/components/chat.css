@@ -374,4 +374,9 @@ html, body, #root, .main-container {
         max-width: 100px;
         overflow-x: auto;
     }
+    .chat-box > .conversation-div > .online-indicator, .offline-indicator {
+        position: absolute;
+        left: 60%;
+        top: 56%;
+    }
   }
