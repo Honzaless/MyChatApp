@@ -10,10 +10,10 @@ export default function Routing() {
     const {username, id} = useContext(UserContext);
     return (
         <Routes>
-            <Route index element={<Login key="auth" />} />
             <Route path="/register" element={<Register key="register" />} />
             <Route path="/:id" element={<Chat key={id} />} />
             <Route path="/profile/:id" element={<Profile />} />
+            <Route index element={<Login key="auth" />} />
         </Routes>
     )
 }
